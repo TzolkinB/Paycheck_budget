@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @income.title %>
+</p>
+
+<p>
+  <strong>Pro income:</strong>
+  <%= @income.pro_income %>
+</p>
+
+<p>
+  <strong>Act income:</strong>
+  <%= @income.act_income %>
+</p>
+
+<%= link_to 'Edit', edit_income_path(@income) %> |
+<%= link_to 'Back', incomes_path %>
