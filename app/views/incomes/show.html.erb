@@ -10,9 +10,6 @@
   <%= @income.pro_income %>
 </p>
 
-<p>
-  <strong>Actual:</strong>
-  <%= @income.act_income %>
-</p>
 <%= link_to 'Edit', edit_income_path(@income) %> |
-<%= link_to 'Back', incomes_path %>
+<%= link_to 'Back', bills_path %>
+<%= link_to 'Destroy', @income, method: :delete, data: { confirm: 'Are you sure?' } %>
