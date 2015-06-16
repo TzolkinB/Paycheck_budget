@@ -3,54 +3,62 @@
   <div class="row">
     <h4>Income</h4>
     <% @incomes.each do |income| %>
-      <div class="col-md-3">
+      <div class="col-xs-12 col-sm-4">
         <div class="panel panel-default">
           <div class="panel-heading">
             <%= link_to income.title, income %>
           </div><!-- panel-heading -->
         </div><!-- panel-default -->
+      </div>
+      <div class="col-xs-12 col-sm-4">  
         <div class="panel panel-default">
           <div class="panel-heading">
             <%= income.pro_income %>
           </div><!-- panel-heading -->
         </div><!-- panel-default -->
+      </div>
+       <div class="col-xs-12 col-sm-4">  
          <div class="panel panel-default">
           <div class="panel-heading">
             <%= render 'actual' %>
           </div><!-- panel-heading -->
         </div><!-- panel-default -->
-      </div><!-- col-md-6 -->
+      </div><!-- ol-xs-12 col-sm-4 -->
     <% end %>
-    
+
   </div><!-- row -->
   <br>
   <div class="row">
     <h4>Bills</h4>
     <% @bills.each do |bill| %>
-      <div class="col-md-3">
+      <div class="col-xs-12 col-sm-4">
         <div class="panel panel-default">
           <div class="panel-heading">
             <%= link_to bill.title, bill %>
           </div><!-- panel-heading -->
         </div><!-- panel-default -->
+      </div>
+      <div class="col-xs-12 col-sm-4">
         <div class="panel panel-default">
           <div class="panel-heading">
             <%= bill.pro_cost %>
           </div><!-- panel-heading -->
         </div><!-- panel-default -->
+      </div>
+      <div class="col-xs-12 col-sm-4">
         <div class="panel panel-default">
           <div class="panel-heading">
             <%= render 'cost' %>
           </div><!-- panel-heading -->
         </div><!-- panel-default -->
-      </div><!-- col-md-6 -->
+      </div><!-- ol-xs-12 col-sm-4 -->
     <% end %>
   </div><!-- row -->
   <br>
   <div class="row">
     <h4>Savings</h4>
     <% @savings.each do |saving| %>
-      <div class="col-md-3">
+      <div class="ol-xs-12 col-sm-4">
         <div class="panel panel-default">
           <div class="panel-heading">
             <%= link_to saving.title, saving %>
@@ -61,7 +69,7 @@
             <%= saving.balance %>
           </div><!-- panel-heading -->
         </div><!-- panel-default -->
-      </div><!-- col-md-6 -->
+      </div><!-- ol-xs-12 col-sm-4 -->
     <% end %>
   </div><!-- row -->
 </div>
