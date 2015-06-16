@@ -1,36 +1,28 @@
 <p id="notice"><%= notice %></p>
 <div class="container">
+  <h4>Income</h4>
     <div class="row">
-      <h4>Income</h4>
       <% @incomes.each do |income| %>
-        <div class="col-xs-4 col-sm-4">
-            <div>
-              <%= link_to income.title, income %>
-            </div><!-- panel-heading -->
+        <div class="col-xs-3">
+          <%= link_to income.title, income %>
         </div>
-        <div class="col-xs-4 col-sm-4">  
-            <div>
-              <%= income.pro_income %>
-            </div><!-- panel-heading -->
+        <div class="col-xs-3">  
+          <%= income.pro_income %>
         </div>
-         <div class="col-xs-4 col-sm-4">  
-            <div>
-              <%= income.act_income %>
-            </div><!-- panel-heading -->
+        <div class="col-xs-3">  
+          <%= income.act_income %>
         </div>
-         <div class="col-xs-4 col-sm-4">  
-           <div>
-              <%= render 'actual' %>
-            </div><!-- panel-heading -->
-        </div><!-- ol-xs-12 col-sm-4 -->
+        <div class="col-xs-3">  
+          <%= render 'actual' %>
+        </div>
       <% end %>
     </div><!-- row -->
   </div>
 <%= link_to 'New Income', new_income_path %>
     <br>
   <div class="container">
+    <h4>Bills</h4>
     <div class="row">
-      <h4>Bills</h4>
       <% @bills.each do |bill| %>
         <div class="col-xs-4 col-sm-4">
             <div>
@@ -53,8 +45,8 @@
 <%= link_to 'New Bill', new_bill_path %>
     <br>
   <div class="container">
+    <h4>Savings</h4>
     <div class="row">
-      <h4>Savings</h4>
       <% @savings.each do |saving| %>
         <div class="col-xs-4 col-sm-4">
           <div>

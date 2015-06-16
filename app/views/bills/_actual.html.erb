@@ -1,6 +1,12 @@
-<%= form_for Income.new do |f| %>
-  
-  <div class="form-group">
-    <%= f.text_area :act_income, class: "form-control", placeholder: "Amount" %>
-  </div>
+
+
+<% @incomes.each do |event| %>
+	<%= form_for event do |f| %>
+	<div class="form-group">
+    	<%= f.text_area :act_income %>
+ 	</div>
+	<%end%>
+	<div>
+		<button>Submit</button>
+	</div>
 <% end %>
