@@ -14,8 +14,14 @@
             <%= income.pro_income %>
           </div><!-- panel-heading -->
         </div><!-- panel-default -->
+         <div class="panel panel-default">
+          <div class="panel-heading">
+            <%= render 'actual' %>
+          </div><!-- panel-heading -->
+        </div><!-- panel-default -->
       </div><!-- col-md-6 -->
     <% end %>
+    
   </div><!-- row -->
   <br>
   <div class="row">
@@ -30,6 +36,11 @@
         <div class="panel panel-default">
           <div class="panel-heading">
             <%= bill.pro_cost %>
+          </div><!-- panel-heading -->
+        </div><!-- panel-default -->
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <%= render 'cost' %>
           </div><!-- panel-heading -->
         </div><!-- panel-default -->
       </div><!-- col-md-6 -->
