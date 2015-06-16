@@ -10,5 +10,10 @@
   <%= @bill.pro_cost %>
 </p>
 
+<p>
+  <strong>Actual:</strong>
+  <%= @bill.act_cost %>
+</p>
+
 <%= link_to 'Edit', edit_bill_path(@bill) %> |
 <%= link_to 'Back', bills_path %>
