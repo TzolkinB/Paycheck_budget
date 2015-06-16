@@ -6,8 +6,7 @@
   <thead>
     <tr>
       <th>Title</th>
-      <th>Pro income</th>
-      <th>Act income</th>
+      <th>Projected</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -17,7 +16,6 @@
       <tr>
         <td><%= income.title %></td>
         <td><%= income.pro_income %></td>
-        <td><%= income.act_income %></td>
         <td><%= link_to 'Show', income %></td>
         <td><%= link_to 'Edit', edit_income_path(income) %></td>
         <td><%= link_to 'Destroy', income, method: :delete, data: { confirm: 'Are you sure?' } %></td>

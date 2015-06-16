@@ -5,11 +5,14 @@ class BillsController < ApplicationController
   # GET /bills.json
   def index
     @bills = Bill.all
+    @incomes = Income.all
+    @savings = Saving.all
   end
 
   # GET /bills/1
   # GET /bills/1.json
   def show
+
   end
 
   # GET /bills/new
@@ -69,6 +72,6 @@ class BillsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def bill_params
-      params.require(:bill).permit(:title, :pro_cost, :act_cost)
+      params.require(:bill).permit(:title, :pro_cost, :act_cost, :user_id, :income_id, :saving_id)
     end
 end

@@ -1,31 +1,59 @@
 <p id="notice"><%= notice %></p>
-
-<h1>Listing Bills</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Pro cost</th>
-      <th>Act cost</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @bills.each do |bill| %>
-      <tr>
-        <td><%= bill.title %></td>
-        <td><%= bill.pro_cost %></td>
-        <td><%= bill.act_cost %></td>
-        <td><%= link_to 'Show', bill %></td>
-        <td><%= link_to 'Edit', edit_bill_path(bill) %></td>
-        <td><%= link_to 'Destroy', bill, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+<div class="container">
+  <div class="row">
+    <h4>Income</h4>
+    <% @incomes.each do |income| %>
+      <div class="col-md-3">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <%= link_to income.title, income %>
+          </div><!-- panel-heading -->
+        </div><!-- panel-default -->
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <%= income.pro_income %>
+          </div><!-- panel-heading -->
+        </div><!-- panel-default -->
+      </div><!-- col-md-6 -->
     <% end %>
-  </tbody>
-</table>
-
-<br>
-
+  </div><!-- row -->
+  <br>
+  <div class="row">
+    <h4>Bills</h4>
+    <% @bills.each do |bill| %>
+      <div class="col-md-3">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <%= link_to bill.title, bill %>
+          </div><!-- panel-heading -->
+        </div><!-- panel-default -->
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <%= bill.pro_cost %>
+          </div><!-- panel-heading -->
+        </div><!-- panel-default -->
+      </div><!-- col-md-6 -->
+    <% end %>
+  </div><!-- row -->
+  <br>
+  <div class="row">
+    <h4>Savings</h4>
+    <% @savings.each do |saving| %>
+      <div class="col-md-3">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <%= link_to saving.title, saving %>
+          </div><!-- panel-heading -->
+        </div><!-- panel-default -->
+          <div class="panel panel-default">
+          <div class="panel-heading">
+            <%= saving.balance %>
+          </div><!-- panel-heading -->
+        </div><!-- panel-default -->
+      </div><!-- col-md-6 -->
+    <% end %>
+  </div><!-- row -->
+</div>
+<%= link_to 'New Income', new_income_path %>
 <%= link_to 'New Bill', new_bill_path %>
+<%= link_to 'New saving', new_saving_path %>
