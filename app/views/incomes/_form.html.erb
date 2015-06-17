@@ -19,6 +19,9 @@
     <%= f.label :pro_income %><br>
     <%= f.text_field :pro_income %>
   </div>
+    <div class="cant-see-me">
+    <%= f.number_field :income_id, value: @income.id %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>
