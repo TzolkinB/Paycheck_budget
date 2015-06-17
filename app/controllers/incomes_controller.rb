@@ -1,6 +1,7 @@
 class IncomesController < ApplicationController
   before_action :set_income, only: [:show, :edit, :update, :destroy]
 
+
   # GET /incomes
   # GET /incomes.json
   def index
@@ -69,6 +70,6 @@ class IncomesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def income_params
-      params.require(:income).permit(:title, :pro_income, :act_income)
+      params.require(:income).permit(:title, :pro_income, :act_income, :income_id)
     end
 end
