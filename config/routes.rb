@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  root 'bills#index'
+
   devise_for :users
   resources :savings
   resources :bills

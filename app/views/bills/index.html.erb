@@ -1,69 +1,66 @@
 <p id="notice"><%= notice %></p>
 <div class="container">
-  <h4>Income</h4>
-    <div class="row">
-      <% @incomes.each do |income| %>
-        <div class="col-xs-3">
-          <%= link_to income.title, income %>
-        </div>
-        <div class="col-xs-3">  
-          <%= income.pro_income %>
-        </div>
-        <div class="col-xs-3">  
-          <%= income.act_income %>
-        </div>
-        <div class="col-xs-3">  
-          <%= render 'actual' %>
-        </div>
-      <% end %>
-    </div><!-- row -->
-  </div>
-<%= link_to 'New Income', new_income_path %>
-    <br>
   <div class="container">
-    <h4>Bills</h4>
-    <div class="row">
-      <% @bills.each do |bill| %>
-        <div class="col-xs-4 col-sm-4">
-            <div>
-              <%= link_to bill.title, bill %>
-            </div><!-- panel-heading -->
-        </div>
-        <div class="col-xs-4 col-sm-4">
-            <div>
-              <%= bill.pro_cost %>
-            </div><!-- panel-heading -->
-        </div>
-        <div class="col-xs-4 col-sm-4">
-            <div>
-              <%= render 'cost' %>
-            </div><!-- panel-heading -->
-        </div><!-- ol-xs-12 col-sm-4 -->
-      <% end %>
-    </div><!-- row -->
-  </div>
-<%= link_to 'New Bill', new_bill_path %>
+    <div>
+    <h4>Income</h4>
+    <%= link_to 'New Income', new_income_path %>
     <br>
-  <div class="container">
-    <h4>Savings</h4>
+    </div>
+        <div>
+          <%= render 'incomes/form2' %>
+        </div> 
+        <div class="row">
+          <div class="col-xs-4">
+            <h4>Total Income</h4>
+          </div> 
+          <div class="col-xs-4">
+            <%= Income.sum(:act_income) %>
+          </div>
+        </div>
+    </div>
+    <div class="container">
+      <div>
+      <h4>Bills</h4>
+      <%= link_to 'New Bill', new_bill_path %>
+      <br>
+      </div>
+        <div>
+          <%= render 'form2' %>
+        </div> 
+      <div class="row">
+        <div class="col-xs-4">
+          <h4>Total Bills</h4>
+        </div> 
+        <div class="col-xs-4">
+          <%= Bill.sum(:act_cost) %>
+        </div>
+      </div>
+    </div>
     <div class="row">
-      <% @savings.each do |saving| %>
-        <div class="col-xs-4 col-sm-4">
-          <div>
-            <%= link_to saving.title, saving %>
-          </div><!-- panel-heading -->
-        </div><!-- panel-default -->
-        <div class="col-xs-4 col-sm-4">
-          <div>
-            <%= saving.balance %>
-          </div><!-- panel-heading -->
-        </div><!-- panel-default -->
-        <div class="col-xs-4 col-sm-4">
-          <div>
-            <%= render 'deposit' %>
-          </div><!-- panel-heading -->
-        </div><!-- ol-xs-12 col-sm-4 -->
-      <% end %>
-    </div><!-- row -->
-  </div>
-<%= link_to 'New saving', new_saving_path %>
+      <div class="col-xs-4">
+        <h4>Remaining Balance</h4>
+      </div>
+      <div class="col-xs-4">
+        <%= Income.sum(:act_income) - Bill.sum(:act_cost) %>
+      </div>  
+    </div>  
+ 
+
+</div>  
+<div class="container">
+    <div class="container">
+      <div>
+      <h4>Savings</h4>
+      <%= link_to 'New saving', new_saving_path %>
+      <br>
+      </div>
+         <div>
+          <%= render 'savings/form2' %>
+        </div> 
+        <div class="row">
+          <div class="col-xs-6">
+            <h4>Balance</h4>
+          </div> 
+        </div>
+    </div>
+</div>
