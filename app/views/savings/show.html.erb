@@ -10,6 +10,11 @@
   <%= @saving.balance %>
 </p>
 
+<p>
+  <strong>Goal:</strong>
+  <%= @saving.goal %>
+</p>
+
 <%= link_to 'Edit', edit_saving_path(@saving) %> |
 <%= link_to 'Back', bills_path %>
 <%= link_to 'Destroy', @saving, method: :delete, data: { confirm: 'Are you sure?' } %>
