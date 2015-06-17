@@ -56,7 +56,7 @@ class SavingsController < ApplicationController
   def destroy
     @saving.destroy
     respond_to do |format|
-      format.html { redirect_to savings_url, notice: 'Saving was successfully destroyed.' }
+      format.html { redirect_to bills_url, notice: 'Saving was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
