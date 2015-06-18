@@ -38,6 +38,10 @@ body {
 }
 
 h4 {
-	font-size: 1.5em;
-	text-decoration: underline;
+	font-size: 1.75em;
+	font-weight: bold;
+}
+
+.category {
+	font-size: 1.25em;
 }

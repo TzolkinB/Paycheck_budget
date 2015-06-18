@@ -28,7 +28,7 @@ class SavingsController < ApplicationController
 
     respond_to do |format|
       if @saving.save
-        format.html { redirect_to @saving, notice: 'Saving was successfully created.' }
+        format.html { redirect_to bills_path, notice: 'Saving was successfully created.' }
         format.json { render :show, status: :created, location: @saving }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class SavingsController < ApplicationController
   def update
     respond_to do |format|
       if @saving.update(saving_params)
-        format.html { redirect_to @saving, notice: 'Saving was successfully updated.' }
+        format.html { redirect_to bills_path, notice: 'Saving was successfully updated.' }
         format.json { render :show, status: :ok, location: @saving }
       else
         format.html { render :edit }
