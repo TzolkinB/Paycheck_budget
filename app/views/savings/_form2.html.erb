@@ -12,6 +12,10 @@
     <div class="col-xs-2 col-sm-2">
       <%= saving.goal %><br>
     </div>
+    <div class="col-xs-2 col-sm-2">
+      <%= saving.met %>
+        <%= ((saving.balance/saving.goal) * 100).to_s + "%" %>
+    </div>
   <br>
 <% end %>
 </div>
