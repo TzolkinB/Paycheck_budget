@@ -1,71 +1,57 @@
 <p id="notice"><%= notice %></p>
 <div class="container">
-  <div class="container">
-    <div>
+  <table class="table">
     <h4>Income</h4>
     <%= link_to 'New Income', new_income_path %>
-  </div>
     <br>
-    <div class="category">
-      <div class="col-xs-2">
-        <th>Name</th>
-      </div>
-      <div class="col-xs-2">
-        <th>Projected</th>
-      </div>
-      <div class="col-xs-2">
-        <th>Actual</th>
-      </div>
-    </div>
-        <div>
-          <%= render 'incomes/form2' %>
-        </div> 
-        <div class="row">
-          <div class="col-xs-4">
-            <h5>Total Income</h5>
-          </div> 
-          <div class="col-xs-4">
-            <%= Income.sum(:act_income) %>
-          </div>
-        </div>
-    </div>
-    <div class="container">
-      <div>
-        <h4>Bills</h4>
-        <%= link_to 'New Bill', new_bill_path %>
-        <br>
-        <div class="category">
-          <div class="col-xs-2">
-            <th>Name</th>
-          </div>
-          <div class="col-xs-2">
-            <th>Projected</th>
-          </div>
-          <div class="col-xs-2">
-            <th>Actual</th>
-          </div>
-        </div>
-      </div>
-        <div>
-          <%= render 'form2' %>
-        </div> 
-      <div class="row">
-        <div class="col-xs-4">
-          <h5>Total Bills</h5>
-        </div> 
-        <div class="col-xs-4">
-          <%= Bill.sum(:act_cost) %>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-xs-4">
-        <h5>Remaining Balance</h5>
-      </div>
-      <div class="col-xs-4">
-        <%= Income.sum(:act_income) - Bill.sum(:act_cost) %>
-      </div>  
-    </div>  
+      <thead>
+        <tr>
+          <th style="width:25%">Source</th>
+          <th style="width:25%">Projected Amount</th>
+           <th style="width:25%">Actual Amount</th>
+           <th style="width:25%"></th>
+        </tr>
+      </thead>
+      <%= render 'incomes/form2' %>
+</div> 
+<div class="row">
+  <div class="col-xs-4">
+    <h5>Total Income</h5>
+  </div> 
+  <div class="col-xs-4">
+    <%= Income.sum(:act_income) %>
+  </div>
+</div>
+  <div class="container">
+    <table class="table">
+    <h4>Bills</h4>
+    <%= link_to 'New Bill', new_bill_path %><br />
+    <thead>
+      <tr>
+        <th style="width:25%">Name</th>
+        <th style="width:25%">Projected</th>
+        <th style="width:25%">Actual</th>
+        <th style="width:25%"></th>
+      </tr>
+    </thead>
+    <%= render 'form2' %>
+</div> 
+<div class="row">
+  <div class="col-xs-4">
+    <h5>Total Bills</h5>
+  </div> 
+  <div class="col-xs-4">
+    <%= Bill.sum(:act_cost) %>
+  </div>
+</div>
+<div class="row">
+   <div class="col-xs-4">
+     <h5>Remaining Balance</h5>
+   </div>
+   <div class="col-xs-4">
+      <%= Income.sum(:act_income) - Bill.sum(:act_cost) %>
+   </div>  
+</div>  
  
 
 </div>  

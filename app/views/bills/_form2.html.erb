@@ -1,26 +1,21 @@
 <br>
-<div class="row">  
+<table class="table">
+  <tbody>
+    <tr> 
 <% @bills.each do |bill| %>
-    <div class="col-xs-2 col-sm-2">
-      <%= link_to bill.title, bill %><br>
-    </div>
-    
-    <div class="col-xs-2 col-sm-2">
-      <%= bill.pro_cost %><br>
-    </div>
-    
-    <div class="col-xs-2 col-sm-2">
-    <%= bill.act_cost %><br>
-    </div>
+    <td style="width:25%"><%= link_to bill.title, bill %></td>
+    <td style="width:25%"><%= bill.pro_cost %></td>
+    <td style="width:25%"><%= bill.act_cost %></td>
 
-    <%= form_for bill do |f| %>
-      <div class="col-xs-2 col-sm-2">
+    <td style="width:25%"><%= form_for bill do |f| %>
         <%= f.text_area :act_cost, class: "form-control", placeholder: "Actual Cost" %>
-      </div>
+      
       <div class="actions">
         <%= f.submit class: "btn btn-primary" %>
       </div>
     <% end %>
-  <br>
+  </td>
+</tr>
+</tbody>
 <% end %>
-</div>
+</table>
